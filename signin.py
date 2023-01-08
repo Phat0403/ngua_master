@@ -154,11 +154,11 @@ class Game():
 			[pygame.transform.scale(pygame.image.load(r"asset/character/horse4/5/4.png"), (100, 100)), "ten4_5"]
 		]
 		HORSE5 = [
-			[pygame.transform.scale(pygame.image.load(r"asset/character/horse5/1/4.png"), (100, 100)), "ten5_1"],
-			[pygame.transform.scale(pygame.image.load(r"asset/character/horse5/2/4.png"), (100, 100)), "ten5_2"],
-			[pygame.transform.scale(pygame.image.load(r"asset/character/horse5/3/4.png"), (100, 100)), "ten5_3"],
-			[pygame.transform.scale(pygame.image.load(r"asset/character/horse5/4/4.png"), (100, 100)), "ten5_4"],
-			[pygame.transform.scale(pygame.image.load(r"asset/character/horse5/5/4.png"), (100, 100)), "ten5_5"]
+			[pygame.transform.scale(pygame.image.load(r"asset/character/horse4/1/4.png"), (100, 100)), "ten4_1"],
+			[pygame.transform.scale(pygame.image.load(r"asset/character/horse4/2/4.png"), (100, 100)), "ten4_2"],
+			[pygame.transform.scale(pygame.image.load(r"asset/character/horse4/3/4.png"), (100, 100)), "ten4_3"],
+			[pygame.transform.scale(pygame.image.load(r"asset/character/horse4/4/4.png"), (100, 100)), "ten4_4"],
+			[pygame.transform.scale(pygame.image.load(r"asset/character/horse4/5/4.png"), (100, 100)), "ten4_5"]
 		]
 		self.HORSE = [HORSE1, HORSE2, HORSE3, HORSE4,HORSE5]
 		# Bua
@@ -170,7 +170,7 @@ class Game():
 			self.bua_x.append(random.randint(200, 800))
 		# tien
 		
-		self.coin = 30
+		self.coin = 200
 		#tien cuoc
 		self.coin_bet=30
 		# loai ngua
@@ -530,7 +530,7 @@ class Game():
 		hidden = [True, True, True, True, True]  # hidden của bùa
 		active = [False, False, False, False, False]  # trạng thái kích hoạt bùa
 		horse = [horse1, horse2, horse3, horse4, horse5]  # lấy ra 5 con ngụaư cho dễ gọi vòng for
-		bua = [3, 0.5, 0, -200, 200, 500]
+		bua = [3, 0.5, 0, -100, 100, 500]
 		# tăng tốc
 		# giảm tốc
 		# choáng
@@ -743,19 +743,19 @@ def signup_command():
 	window.geometry('925x500+300+200')
 	window.configure(bg="#95a5a6")
 	window.resizable(False,False)
-    
+
 	def signup():
 		username=user.get()
 		password=code.get()
 		conform=conform_code.get()
-		gold='coin '+username
+		
 		if password==conform:
 			try:
 
 				file=open('datasheet.txt','r+')
 				d=file.read()
-				r=ast.literal_eval				
-				dict2={username:password,'coin '+username:200}
+				r=ast.literal_eval(d)				
+				dict2={username:password}
 				r.update(dict2)
 				file.truncate(0)
 				file.close				
@@ -770,10 +770,10 @@ def signup_command():
 				file.close()
 		else:
 			messagebox.showerror('Invalid','Both Password should match')
-	
+		
 	def sign():
 		window.destroy()
-	
+
     #hiÌ€nh nÃªÌ€n cuÌ‰a Ä‘Äƒng nhÃ¢Ì£p
 	path='./signup.png'
 	img1 = Image.open(path)
