@@ -530,7 +530,7 @@ class Game():
 		hidden = [True, True, True, True, True]  # hidden của bùa
 		active = [False, False, False, False, False]  # trạng thái kích hoạt bùa
 		horse = [horse1, horse2, horse3, horse4, horse5]  # lấy ra 5 con ngụaư cho dễ gọi vòng for
-		bua = [3, 0.5, 0, -100, 100, 500]
+		bua = [3, 0.5, 0, -200, 200, 500]
 		# tăng tốc
 		# giảm tốc
 		# choáng
@@ -720,7 +720,7 @@ def signin():
 	d=file.read()
 	r=ast.literal_eval(d)
 	file.close()
-	main_game.coin=(r['coin '+username])
+	
     
     
     
@@ -773,7 +773,7 @@ def signup_command():
 	
 	def sign():
 		window.destroy()
-	signup.gold
+	
     #hiÌ€nh nÃªÌ€n cuÌ‰a Ä‘Äƒng nhÃ¢Ì£p
 	path='./signup.png'
 	img1 = Image.open(path)
